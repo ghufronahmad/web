@@ -1,6 +1,6 @@
 import { Route, Routes, Navigate } from "react-router-dom"
 import Navbar from "./components/Navbar"
-
+import { Toaster } from "react-hot-toast"
 import HomePage from "./pages/HomePage"
 import SignupPage from "./pages/SignupPage"
 import LoginPage from "./pages/LoginPage"
@@ -36,6 +36,8 @@ const App = () => {
         <Route path="/settings" element={<SettingsPage />} />
         <Route path="/profile" element={authUser ? <ProfilePage /> : <Navigate to="/login" />} />
       </Routes>
+
+      <Toaster />
     </div>
   )
 }
